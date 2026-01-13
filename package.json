@@ -59,8 +59,8 @@
     "three": ">=0.150.0"
   },
   "dependencies": {
-    "@react-three/drei": "^9.117.0",
-    "@react-three/fiber": "^8.17.0"
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^9.5.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.4.0",
@@ -70,8 +70,8 @@
     "@storybook/react-vite": "^8.4.0",
     "@testing-library/react": "^14.3.0",
     "@types/node": "^20.17.0",
-    "@types/react": "^18.3.0",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@types/three": "^0.170.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
@@ -81,8 +81,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "jsdom": "^27.3.0",
     "prettier": "^3.4.0",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "storybook": "^8.4.0",
     "three": "^0.170.0",
     "tsup": "^8.3.0",
