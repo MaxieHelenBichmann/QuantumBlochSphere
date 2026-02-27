@@ -15,6 +15,7 @@ export type {
   CameraConfig,
   EasingFunction,
   OnStateChange,
+  AxisLabelSet,
 } from './types';
 
 // Utility exports for advanced usage

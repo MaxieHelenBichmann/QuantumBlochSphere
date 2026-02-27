@@ -2,21 +2,31 @@
 
 import React from 'react';
 import { Text } from '@react-three/drei';
+import type { AxisLabelSet } from '../types';
 
 interface AxisLabelsProps {
   size?: number;
   color?: string;
   offset?: number;
+  labels?: AxisLabelSet;
 }
 
 export function AxisLabels({
   size = 0.15,
   color = '#ffffff',
   offset = 1.5,
+  labels,
 }: AxisLabelsProps) {
+  const zPos = labels?.zPositive ?? '|0⟩';
+  const zNeg = labels?.zNegative ?? '|1⟩';
+  const xPos = labels?.xPositive ?? '|+⟩';
+  const xNeg = labels?.xNegative ?? '|-⟩';
+  const yPos = labels?.yPositive ?? '|+i⟩';
+  const yNeg = labels?.yNegative ?? '|-i⟩';
+
   return (
     <group>
-      {/* Z axis labels (|0> and |1>) */}
+      {/* Z axis labels */}
       <Text
         position={[0, offset, 0]}
         fontSize={size}
@@ -24,7 +34,7 @@ export function AxisLabels({
         anchorX="center"
         anchorY="middle"
       >
-        |0⟩
+        {zPos}
       </Text>
       <Text
         position={[0, -offset, 0]}
@@ -33,10 +43,10 @@ export function AxisLabels({
         anchorX="center"
         anchorY="middle"
       >
-        |1⟩
+        {zNeg}
       </Text>
 
-      {/* X axis labels (|+> and |->) */}
+      {/* X axis labels */}
       <Text
         position={[offset, 0, 0]}
         fontSize={size}
@@ -44,7 +54,7 @@ export function AxisLabels({
         anchorX="center"
         anchorY="middle"
       >
-        |+⟩
+        {xPos}
       </Text>
       <Text
         position={[-offset, 0, 0]}
@@ -53,10 +63,10 @@ export function AxisLabels({
         anchorX="center"
         anchorY="middle"
       >
-        |-⟩
+        {xNeg}
       </Text>
 
-      {/* Y axis labels (|+i> and |-i>) */}
+      {/* Y axis labels */}
       <Text
         position={[0, 0, offset]}
         fontSize={size}
@@ -64,7 +74,7 @@ export function AxisLabels({
         anchorX="center"
         anchorY="middle"
       >
-        |+i⟩
+        {yPos}
       </Text>
       <Text
         position={[0, 0, -offset]}
@@ -73,7 +83,7 @@ export function AxisLabels({
         anchorX="center"
         anchorY="middle"
       >
-        |-i⟩
+        {yNeg}
       </Text>
     </group>
   );

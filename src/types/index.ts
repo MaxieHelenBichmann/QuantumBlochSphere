@@ -130,6 +130,25 @@ export type OnStateChange = (
 ) => void;
 
 /**
+ * Custom axis label text for each position on the sphere.
+ * Allows switching between Bloch sphere (quantum) and Poincaré sphere (polarization) conventions.
+ */
+export interface AxisLabelSet {
+  /** North pole label (default: "|0⟩") */
+  zPositive?: string;
+  /** South pole label (default: "|1⟩") */
+  zNegative?: string;
+  /** Positive X label (default: "|+⟩") */
+  xPositive?: string;
+  /** Negative X label (default: "|-⟩") */
+  xNegative?: string;
+  /** Positive Y label (default: "|+i⟩") */
+  yPositive?: string;
+  /** Negative Y label (default: "|-i⟩") */
+  yNegative?: string;
+}
+
+/**
  * Main BlochSphere component props
  */
 export interface BlochSphereProps {
@@ -161,6 +180,9 @@ export interface BlochSphereProps {
    * Use this with onStateChange to maintain history externally.
    */
   history?: SphericalCoordinates[];
+
+  /** Custom axis labels (for switching between Bloch/Poincaré conventions) */
+  labels?: AxisLabelSet;
 
   /** CSS class name for the container */
   className?: string;

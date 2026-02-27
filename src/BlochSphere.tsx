@@ -57,6 +57,7 @@ export function BlochSphere({
   onStateChange,
   onAnimationStart,
   onAnimationEnd,
+  labels,
   history = [],
   className,
 }: BlochSphereProps) {
@@ -136,7 +137,7 @@ export function BlochSphere({
         )}
 
         {mergedStyle.showLabels && (
-          <AxisLabels size={mergedStyle.labelSize} />
+          <AxisLabels size={mergedStyle.labelSize} labels={labels} />
         )}
 
         <StateVector
